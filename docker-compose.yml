@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+    php_fpm:
+        build:
+            context: php_fpm
+        container_name: php_fpm
+        volumes:
+            - ./rc1-linky/:/var/www/
+        links:
+            - mongo
+
+    nginx:
+        build:
+            context: nginx
+        container_name: nginx
+        volumes:
+            - ./rc1-linky/:/var/www/
+        links:
+            - php_fpm
+        ports:
+            - 80:80
+            - 443:443
+
+    mongo:
+        image: mongo
+        container_name: mongo
+        volumes:
+            - ./mongo/data/:/data/db/
+            - ./mongo/entrypoint/:/docker-entrypoint-initdb.d
