@@ -6,7 +6,7 @@ services:
             context: php_fpm
         container_name: php_fpm
         volumes:
-            - ./rc1-linky/:/var/www/
+            - ./rc1-linky/:/var/www/html/
         links:
             - mongo
 
@@ -15,7 +15,7 @@ services:
             context: nginx
         container_name: nginx
         volumes:
-            - ./rc1-linky/:/var/www/
+            - ./rc1-linky/:/var/www/html/
         links:
             - php_fpm
         ports:
