@@ -1,6 +1,12 @@
+@extends('navbar.masterNavBar')
 
-@extends('welcome')
 
+
+
+@section('title', 'Home')
+
+
+@yield('control-s   idebar')
 @section('main-header')
     <header class="main-header">
         <!-- Logo -->
@@ -307,3 +313,4 @@
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
 @endsection
+

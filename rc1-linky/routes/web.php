@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('navbar.navebar');
+});
+
+Route::get('/', function () {
+    return view('navbar.navebar');
 });
 
 Route::get('/parser', "Controller@testExcel");
