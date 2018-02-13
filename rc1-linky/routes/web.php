@@ -20,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/parser', "Controller@testExcel");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
