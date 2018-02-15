@@ -28,3 +28,9 @@ services:
         volumes:
             - ./mongo/data/:/data/db/
             - ./mongo/entrypoint/:/docker-entrypoint-initdb.d
+    mysql:
+        image: mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: 123456
+          MYSQL_DATABASE: laravel
