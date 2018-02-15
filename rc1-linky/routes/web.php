@@ -13,11 +13,8 @@
 
 Route::get('/', function () {
     return view('navbar.navebar');
-});
+})->middleware('auth');
 
-Route::get('/', function () {
-    return view('navbar.navebar');
-});
 
 Route::get('/parser', "Controller@testExcel");
 
