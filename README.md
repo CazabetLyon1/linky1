@@ -11,7 +11,19 @@
 7. Se connecter au conteneur php_fpm : `docker exec -it php_fpm bash`
 8. Exécuter `php artisan migrate`
 
+## Base de donnée
+
+1. Depuis le dossier du projet : `sudo docker exec -it php_fpm bash`
+2. Puis : `php artisan migrate`
+3. Trouver le nom : `sudo docker ps` -> colonne names ligne contenant mysl (rc1linky_mysql_1)
+3. Pour demarrer le bash : `sudo docker exec -it rc1linky_mysql_1 bash`
+4. Se connecter en admin : `mysql -u root -p123456`
+5. Choisir la Base de donnée : `use laravel;`
+6. et c'est parti : `Select * from users;`
+
+
 
 Utile :
 https://github.com/jenssegers/laravel-mongodb
 export COMPOSER_ALLOW_SUPERUSER=1
+
