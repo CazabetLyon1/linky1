@@ -15,7 +15,8 @@
 
 1. Depuis le dossier du projet : `sudo docker exec -it php_fpm bash`
 2. Puis : `php artisan migrate`
-3. Pour demarrer le bash : `docker exec -it mysql bash`
+3. Trouver le nom : `sudo docker ps` -> colonne names ligne contenant mysl (rc1linky_mysql_1)
+3. Pour demarrer le bash : `sudo docker exec -it rc1linky_mysql_1 bash`
 4. Se connecter en admin : `mysql -u root -p123456`
 5. Choisir la Base de donnée : `use laravel;`
 6. et c'est parti : `Select * from users;`
