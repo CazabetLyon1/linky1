@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>RC1</b></span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>RC1</b> - Linky</span>
     </a>
@@ -31,16 +31,16 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
+                                {{ Auth::user()->name }}
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -48,9 +48,17 @@
                             <div class="pull-left">
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
+
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Deconnection
+                                </a>
                             </div>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: one;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                 </li>
