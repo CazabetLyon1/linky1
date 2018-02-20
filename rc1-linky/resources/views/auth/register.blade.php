@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('Content')
+@section('content')
     <body class="hold-transition register-page">
         <div class="register-box">
             <div class="register-logo">

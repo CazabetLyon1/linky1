@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 
-@section('Content')
+@section('content')
 <body class="hold-transition login-page">
     <!-- Title -->
     <div class="login-box">

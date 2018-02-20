@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('navbar.navebar');
-})->middleware('auth');
+    return view('layouts.master');
+});
+//->middleware('auth');
 
-
-Route::get('/parser', "Controller@testExcel");
+//Route::get('/parser', "Controller@testExcel");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('home', 'AuthedController');
