@@ -3,6 +3,9 @@
 namespace App\Parser;
 
 
+use App\Conso;
+use DateTime;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -24,11 +27,13 @@ class FilePaser extends Parser
 
         Config::set('excel.csv.delimiter', ';');
         $data = Excel::load($path.$filename)->get();
-        $conso=[];
         foreach ($data as $key => $value) {
-            $conso[]=['date'=>$value['horodate'],'valeur'=>$value['valeur']];
+            $conso = new Conso();
+            $conso->horodate=DateTime::createFromFormat("Y-m-d-H:i:sP", str_replace_first('T','-',$value['horodate']));
+            $conso->value=$value['valeur'];
+            $conso->user_id= Auth::id();
+            $conso->save();
         }
-        var_dump($conso);
     }
 
 }

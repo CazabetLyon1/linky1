@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 //->middleware('auth');
 
-//Route::get('/parser', "Controller@testExcel");
+Route::get('/parser', "Controller@testExcel")->middleware('auth');
 
 Auth::routes();
 
