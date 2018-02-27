@@ -17,8 +17,6 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="css/skins/_all-skins.min.css">
-        <!-- Morris chart -->
-        <link rel="stylesheet" href="bower_components/morris.js/morris.css">
         <!-- jvectormap -->
         <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
         <!-- Date Picker -->
@@ -48,11 +46,10 @@
         <script>
             $.widget.bridge('uibutton', $.ui.button);
         </script>
+        <!-- ChartJS -->
+        <script src="bower_components/chart.js/Chart.js"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Morris.js charts -->
-        <script src="bower_components/raphael/raphael.min.js"></script>
-        <script src="bower_components/morris.js/morris.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>>
         <!-- Sparkline -->
         <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
         <!-- jvectormap -->
@@ -72,10 +69,10 @@
         <!-- FastClick -->
         <script src="bower_components/fastclick/lib/fastclick.js"></script>
         <!-- AdminLTE App -->
-        <script src="js/adminlte.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="js/pages/dashboard.js"></script>
+        <script src="js/adminlte.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="js/demo.js"></script>
+
+        @yield('script')
     </body>
 </html>

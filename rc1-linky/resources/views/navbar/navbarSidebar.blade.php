@@ -14,21 +14,31 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Menu</li>
-            <li class="active treeview">
-                <a href="#">
+            <li  class="">
+                <a href="/">
                     <i class="fa fa-home"></i> <span>Acceuil</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
+            <li class="treeview active">
+                <a href="/consoView">
                     <i class="fa fa-dashboard"></i> <span>Ma consommation</span>
                     <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Visualisation</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i>Importer</a></li>
+                    <li class="active">
+                        <a href="/consoView">
+                            <i class="fa fa-circle-o"></i>Visualisation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index2.html">
+                            <i class="fa fa-circle-o">
+
+                            </i>Importer
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">

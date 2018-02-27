@@ -11,12 +11,23 @@
 |
 */
 
+use App\Http\Controllers\Graph;
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
-        return view('layouts.master');
+        return view('pages.home');
     });
 
-    Route::get('/import', "Controller@testExcel")
+    Route::get('/import', "Controller@testExcel");
+
+    Route::get('/consoView',function () {
+        return view('pages.consoView', ['data1'=>Graph::getGraph()]);
+    });
+
 });
+
+
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginC    ontroller@logout');
