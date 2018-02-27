@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
-//->middleware('auth');
-
-Route::get('/parser', "Controller@testExcel")->middleware('auth');
-
 Auth::routes();
 
-Route::resource('', 'AuthedController');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('layouts.master');
+    });
+
+    Route::get('/import', "Controller@testExcel")
+});
