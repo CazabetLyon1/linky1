@@ -38,13 +38,20 @@
 
     <!-- page script -->
     <script>
-        var a = {!! $data1 !!};
+        var lab = [];
+        var val = [];
+        var data = {!! $data1 !!};
+        for(var it in data)
+        {
+            lab.push(data[it].horodate);
+            val.push(data[it].value);
+        }
         new Chart(document.getElementById("canvas"), {
             type: 'line',
             data: {
-                labels: a,
+                labels: lab,
                 datasets: [{
-                    data: [86,114,106,106,107,111,133,221,783,2478],
+                    data: val,
                     label: "Africa",
                     borderColor: "#3e95cd",
                     fill: false

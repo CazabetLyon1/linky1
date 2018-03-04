@@ -23,7 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/import', "Controller@testExcel");
 
     Route::get('/consoView',function () {
-        return view('pages.consoView', ['data1'=>Graph::getGraph()]);
+        return view('pages.consoView', ['data1'=>Graph::getGraph(Auth::id(),'DEFAULT')]);
     });
 
 });
