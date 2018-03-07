@@ -30,9 +30,17 @@ services:
             - ./mongo/entrypoint/:/docker-entrypoint-initdb.d
     mysql:
         image: mysql
+        container_name: mysql
         restart: always
         ports:
           - 3306:3306
         environment:
           MYSQL_ROOT_PASSWORD: 123456
           MYSQL_DATABASE: laravel
+
+    api:
+        build:
+          context: api-docker
+        container_name: api
+        volumes:
+          - ./api-files/:/var/www/html

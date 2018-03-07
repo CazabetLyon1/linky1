@@ -5,13 +5,20 @@
 1. Installer `docker` et `docker-compose`.
 2. Cloner le dépot `git clone https://forge.univ-lyon1.fr/p1707902/RC1-Linky.git`.
 3. Se placer dans le dossier `RC1-Linky` 
-4. Donner les droits d'écriture dans le dossier `rc1-linky/storage`, `mongo` et `nginx`
-5. Executer `docker-compose up`
-6. Le projet fonctionne en local, rendez-vous sur [localhost](http://127.0.0.1)
+4. Donner les droits d'écriture dans le dossier `rc1-linky/storage`, `mongo`, `nginx` et sur les fichiers `api-files/sem.txt` et `api-files/linky.log`
+5. Executer `sudo ./launcher.sh`
+6. Le projet fonctionne en local, rendez-vous sur [rc1-linky.fr](http://rc1-linky.fr)
 7. Se connecter au conteneur php_fpm : `docker exec -it php_fpm bash`
 8. Exécuter `php artisan migrate`
 
-## Base de donnée
+## API 
+Une api "maison" est disponible à l'adresse [api.rc1-linky.fr](http://api.rc1-linky.fr), elle prend en paramètres `login`, `mdp` et `type` (heure, jour, mois, annee). 
+
+Elle répond seulement aux requêtes en `POST`.
+
+Cette api utilise le projet [Jeedom Linky](https://github.com/Asdepique777/jeedom_linky).
+
+## Base de données
 
 1. Depuis le dossier du projet : `sudo docker exec -it php_fpm bash`
 2. Puis : `php artisan migrate`

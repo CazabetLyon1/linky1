@@ -1,0 +1,101 @@
+python3: can't open file './linky_json.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "./linky_json.py", line 30, in <module>
+    BASEDIR = os.environ['BASE_DIR']
+  File "/usr/lib/python3.5/os.py", line 725, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'BASE_DIR'
+2018-03-07 18:37:55,531 logging in as adrien.mevelec@hotmail.fr...
+2018-03-07 18:37:55,917 logged in successfully!
+2018-03-07 18:37:55,918 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 189, in <module>
+    main()
+  File "./linky_json.py", line 139, in main
+    res_year = linky.get_data_per_year(token)
+  File "/var/www/html/linky.py", line 81, in get_data_per_year
+    return _get_data(session, 'urlCdcAn')
+  File "/var/www/html/linky.py", line 116, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-03-07 18:38:36,388 logging in as adrien.mevelec@hotmail.fr...
+2018-03-07 18:38:36,781 logged in successfully!
+2018-03-07 18:38:36,781 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 189, in <module>
+    main()
+  File "./linky_json.py", line 139, in main
+    res_year = linky.get_data_per_year(token)
+  File "/var/www/html/linky.py", line 81, in get_data_per_year
+    return _get_data(session, 'urlCdcAn')
+  File "/var/www/html/linky.py", line 116, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-03-07 18:39:22,202 logging in as adrien.mevelec@hotmail.fr...
+2018-03-07 18:39:22,586 logged in successfully!
+2018-03-07 18:39:22,586 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 189, in <module>
+    main()
+  File "./linky_json.py", line 139, in main
+    res_year = linky.get_data_per_year(token)
+  File "/var/www/html/linky.py", line 81, in get_data_per_year
+    return _get_data(session, 'urlCdcAn')
+  File "/var/www/html/linky.py", line 116, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-03-07 18:59:57,203 logging in as zz...
+2018-03-07 18:59:57,596 Login unsuccessful. Check your credentials.
+2018-03-07 19:00:13,746 logging in as zyugii...
+2018-03-07 19:00:14,124 Login unsuccessful. Check your credentials.
+2018-03-07 19:00:33,865 logging in as zyugii...
+2018-03-07 19:00:34,271 Login unsuccessful. Check your credentials.
+2018-03-07 19:00:50,199 logging in as zz...
+2018-03-07 19:00:50,589 Login unsuccessful. Check your credentials.
+2018-03-07 19:01:05,896 logging in as zyugii...
+2018-03-07 19:01:06,273 Login unsuccessful. Check your credentials.
+2018-03-07 19:07:20,344 logging in as adrien.mevelec@hotmail.fr...
+2018-03-07 19:07:20,716 logged in successfully!
+2018-03-07 19:07:20,716 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 189, in <module>
+    main()
+  File "./linky_json.py", line 139, in main
+    res_year = linky.get_data_per_year(token)
+  File "/var/www/html/linky.py", line 81, in get_data_per_year
+    return _get_data(session, 'urlCdcAn')
+  File "/var/www/html/linky.py", line 116, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
