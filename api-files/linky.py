@@ -35,13 +35,16 @@ API_ENDPOINT_DATA = '/suivi-de-consommation'
 DATA_NOT_REQUESTED = -1
 DATA_NOT_AVAILABLE = -2
 
+
 class LinkyLoginException(Exception):
     """Thrown if an error was encountered while retrieving energy consumption data."""
     pass
 
+
 class LinkyServiceException(Exception):
     """Thrown when the webservice threw an exception."""
     pass
+
 
 def login(username, password):
     """Logs the user into the Linky API.
@@ -68,21 +71,24 @@ def get_data_per_hour(session, start_date, end_date):
     """Retreives hourly energy consumption data."""
     return _get_data(session, 'urlCdcHeure', start_date, end_date)
 
+
 def get_data_per_day(session, start_date, end_date):
     """Retreives daily energy consumption data."""
     return _get_data(session, 'urlCdcJour', start_date, end_date)
+
 
 def get_data_per_month(session, start_date, end_date):
     """Retreives monthly energy consumption data."""
     return _get_data(session, 'urlCdcMois', start_date, end_date)
 
+
 def get_data_per_year(session):
     """Retreives yearly energy consumption data."""
     return _get_data(session, 'urlCdcAn')
 
+
 def _get_data(session, resource_id, start_date=None, end_date=None):
     req_part = 'lincspartdisplaycdc_WAR_lincspartcdcportlet'
-
 
     # We send the session token so that the server knows who we are
     payload = {
