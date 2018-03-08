@@ -12,11 +12,11 @@
 8. Exécuter `php artisan migrate`
 
 ## API 
-Une api "maison" est disponible à l'adresse [api.rc1-linky.fr](http://api.rc1-linky.fr), elle prend en paramètres `login`, `mdp` et `type` (heure, jour, mois, annee). 
+Une api "maison" est disponible à l'adresse [api.rc1-linky.fr](http://api.rc1-linky.fr) en `POST`, elle prend en paramètres `login`, `mdp` et `type` (hour, day, month, year). 
 
-Elle répond seulement aux requêtes en `POST`.
+Si le type est `hour` on peut ajouter les paramètres `debut` et `fin` au format dd/mm/yyyy. Le début est au minimum un mois avant la date du jour.
 
-Cette api utilise le projet [Jeedom Linky](https://github.com/Asdepique777/jeedom_linky).
+Cette api utilise en partie le projet [Jeedom Linky](https://github.com/Asdepique777/jeedom_linky).
 
 ## Base de données
 

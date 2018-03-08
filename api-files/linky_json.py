@@ -30,7 +30,6 @@ PASSWORD = os.environ['LINKY_PASSWORD']
 BASEDIR = os.environ['BASE_DIR']
 TYPEDATA = os.environ['LINKY_TYPE']
 
-
 # Generate y axis (consumption values)
 def generate_y_axis(res):
     y_values = []
@@ -50,7 +49,7 @@ def generate_y_axis(res):
 
 
 # Generate x axis (time values)
-def generate_x_axis(res, time_delta_unit, time_format, inc):
+def generate_x_axis(res, time_delta_unit, inc, format):
     x_values = []
 
     # Extract start date and parse it
@@ -66,7 +65,7 @@ def generate_x_axis(res, time_delta_unit, time_format, inc):
     for ordre, _ in enumerate(res['graphe']['data']):
         kwargs = {}
         kwargs[time_delta_unit] = ordre * inc
-        x_values.insert(ordre, (start_date + relativedelta(**kwargs)).strftime(time_format))
+        x_values.insert(ordre, (start_date + relativedelta(**kwargs)).strftime(format))
 
     return x_values
 
@@ -78,7 +77,7 @@ def dtostr(date):
 
 # Export the JSON file for half-hours power measure (for the last pas day)
 def export_hours_values(res):
-    hours_x_values = generate_x_axis(res, 'hours', "%H:%M", 0.5)
+    hours_x_values = generate_x_axis(res, 'hours', 0.5, "%d-%m-%Y+%Hh%M")
     hours_y_values = generate_y_axis(res)
     hours_values = []
 
@@ -90,7 +89,7 @@ def export_hours_values(res):
 
 # Export the JSON file for daily consumption (for the past rolling 30 days)
 def export_days_values(res):
-    days_x_values = generate_x_axis(res, 'days', "%d %b", 1)
+    days_x_values = generate_x_axis(res, 'days', 1, "%d-%m-%Y")
     days_y_values = generate_y_axis(res)
     days_values = []
 
@@ -102,7 +101,7 @@ def export_days_values(res):
 
 # Export the JSON file for monthly consumption (for the current year, starting 12 months from today)
 def export_months_values(res):
-    months_x_values = generate_x_axis(res, 'months', "%b", 1)
+    months_x_values = generate_x_axis(res, 'months', 1, "%m-%Y")
     months_y_values = generate_y_axis(res)
     months_values = []
 
@@ -114,7 +113,7 @@ def export_months_values(res):
 
 # Export the JSON file for yearly consumption
 def export_years_values(res):
-    years_x_values = generate_x_axis(res, 'years', "%Y", 1)
+    years_x_values = generate_x_axis(res, 'years', 1, "%Y")
     years_y_values = generate_y_axis(res)
     years_values = []
 
@@ -127,13 +126,19 @@ def export_years_values(res):
 # Main script
 def main():
     logging.basicConfig(format='%(asctime)s %(message)s', level=logging.INFO)
+    try:
+        DATEDEBUT = os.environ['LINKY_DATE_DEBUT']
+        DATEFIN = os.environ['LINKY_DATE_FIN']
+    except:
+        DATEDEBUT = ""
+        DATEFIN = ""
 
     try:
         logging.info("logging in as %s...", USERNAME)
         token = linky.login(USERNAME, PASSWORD)
         logging.info("logged in successfully!")
-
         logging.info("retreiving data...")
+
         today = datetime.date.today()
 
         if TYPEDATA == "year":
@@ -158,15 +163,22 @@ def main():
                 logging.info("days values non exported")
 
         elif TYPEDATA == "hour":
-            res_hour = linky.get_data_per_hour(token, dtostr(today - relativedelta(days=1)), dtostr(today))
+            if DATEDEBUT == "":
+                DATEDEBUT = dtostr(today - relativedelta(days=1))
+            if DATEFIN == "":
+                DATEFIN = dtostr(today)
+            res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
             try:
                 export_hours_values(res_hour)
             except Exception as exc:
                 logging.error(exc)
 
+        logging.info("ok")
+
     except linky.LinkyLoginException as exc:
         logging.error(exc)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
