@@ -12,7 +12,7 @@ if(empty($_POST['mdp'])){
 
 if(empty($_POST['type'])){
     $returnData['error'][]="Vous devez définir un type de données";
-}elseif (!in_array($_POST['type'],array('heure','jour','mois','annee'))){
+}elseif (!in_array($_POST['type'],array('hour','day','month','year'))){
     $returnData['error'][]="Le type est incorrect";
 }
 
@@ -35,30 +35,12 @@ if(empty($returnData['error'])){
         $sem = fopen('sem.txt', 'r+');
         fputs($sem, 0);
         fclose($sem);
-        exec('./gen_json.sh ' . escapeshellcmd($_POST['login']) . ' ' . escapeshellcmd($_POST['mdp']));
+        exec('./gen_json.sh ' . escapeshellcmd($_POST['login']) . ' ' . escapeshellcmd($_POST['mdp']). ' ' . escapeshellcmd($_POST['type']));
         $sem = fopen('sem.txt', 'r+');
         fputs($sem, 1);
         fclose($sem);
-        $json="";
-        switch ($_POST['type']){
-            case 'heure':
-                $json=file_get_contents('export_hours_values.json');
-                break;
-            case 'jour':
-                $json=file_get_contents('export_days_values.json');
-                break;
-            case 'mois':
-                $json=file_get_contents('export_months_values.json');
-                break;
-            case 'annee':
-                $json=file_get_contents('export_years_values.json');
-                break;
-
-        }
-        unlink('export_days_values.json');
-        unlink('export_hours_values.json');
-        unlink('export_months_values.json');
-        unlink('export_years_values.json');
+        $json=file_get_contents('export_'.$_POST['type'].'s_values.json');
+//        unlink('export_'.$_POST['type'].'s_values.json');
         $returnData['data']=json_decode($json,true);
         $returnData['status'] = 'ok';
     }

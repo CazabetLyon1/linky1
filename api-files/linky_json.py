@@ -28,6 +28,7 @@ from dateutil.relativedelta import relativedelta
 USERNAME = os.environ['LINKY_USERNAME']
 PASSWORD = os.environ['LINKY_PASSWORD']
 BASEDIR = os.environ['BASE_DIR']
+TYPEDATA = os.environ['LINKY_TYPE']
 
 
 # Generate y axis (consumption values)
@@ -135,48 +136,37 @@ def main():
         logging.info("retreiving data...")
         today = datetime.date.today()
 
-        # Years
-        res_year = linky.get_data_per_year(token)
+        if TYPEDATA == "year":
+            res_year = linky.get_data_per_year(token)
+            try:
+                export_years_values(res_year)
+            except Exception:
+                logging.info("years values non exported")
 
-        # 12 months ago - today
-        res_month = linky.get_data_per_month(token, dtostr(today - relativedelta(months=11)), dtostr(today))
+        elif TYPEDATA == "month":
+            res_month = linky.get_data_per_month(token, dtostr(today - relativedelta(months=11)), dtostr(today))
+            try:
+                export_months_values(res_month)
+            except Exception:
+                logging.info("months values non exported")
 
-        # One month ago - yesterday
-        res_day = linky.get_data_per_day(token, dtostr(today - relativedelta(days=1, months=1)), dtostr(today - relativedelta(days=1)))
+        elif TYPEDATA == "day":
+            res_day = linky.get_data_per_day(token, dtostr(today - relativedelta(days=1, months=1)), dtostr(today - relativedelta(days=1)))
+            try:
+                export_days_values(res_day)
+            except Exception:
+                logging.info("days values non exported")
 
-        # Yesterday - today
-        res_hour = linky.get_data_per_hour(token, dtostr(today - relativedelta(days=1)), dtostr(today))
-
-        logging.info("got data!")
-        ############################################
-        # Export of the JSON files, with exception handling as Enedis website is not robust and return empty data often
-        try:
-            export_hours_values(res_hour)
-        except Exception as exc:
-            # logging.info("hours values non exported")
-            logging.error(exc)
-
-        try:
-            export_days_values(res_day)
-        except Exception:
-            logging.info("days values non exported")
-
-        try:
-            export_months_values(res_month)
-        except Exception:
-            logging.info("months values non exported")
-
-        try:
-            export_years_values(res_year)
-        except Exception:
-            logging.info("years values non exported")
-
-    ############################################
+        elif TYPEDATA == "hour":
+            res_hour = linky.get_data_per_hour(token, dtostr(today - relativedelta(days=1)), dtostr(today))
+            try:
+                export_hours_values(res_hour)
+            except Exception as exc:
+                logging.error(exc)
 
     except linky.LinkyLoginException as exc:
         logging.error(exc)
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
