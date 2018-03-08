@@ -20,7 +20,9 @@ if(empty($returnData['error'])){
     //Semaphore maison
     $cmpt = 0;
     do {
-        sleep(1);
+        if($cmpt>0) {
+            sleep(1);
+        }
         $sem = fopen('sem.txt', 'r+');
         $value = fgets($sem);
         fclose($sem);
@@ -40,11 +42,24 @@ if(empty($returnData['error'])){
         $json="";
         switch ($_POST['type']){
             case 'heure':
-//                $json=file_get_contents('todo');
+                $json=file_get_contents('export_hours_values.json');
+                break;
+            case 'jour':
+                $json=file_get_contents('export_days_values.json');
+                break;
+            case 'mois':
+                $json=file_get_contents('export_months_values.json');
+                break;
+            case 'annee':
+                $json=file_get_contents('export_years_values.json');
+                break;
+
         }
-//        unlink('todo');
-//        unlink('todo');
-        $returnData['data']=$json;
+        unlink('export_days_values.json');
+        unlink('export_hours_values.json');
+        unlink('export_months_values.json');
+        unlink('export_years_values.json');
+        $returnData['data']=json_decode($json,true);
         $returnData['status'] = 'ok';
     }
 }else{
