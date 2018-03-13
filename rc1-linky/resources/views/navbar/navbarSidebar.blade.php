@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li class="treeview active">
-                <a href="/consoView">
+                <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Ma consommation</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index2.html">
+                        <a href="/importPage">
                             <i class="fa fa-circle-o">
 
                             </i>Importer
@@ -42,7 +42,7 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="#">
+                <a href="/parameters">
                     <i class="fa fa-wrench"></i>
                     <span>Paramètres</span>
                 </a>
