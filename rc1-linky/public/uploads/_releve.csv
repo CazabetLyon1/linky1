@@ -1,4 +1,4 @@
-﻿Identifiant PRM;Type de donnees;Date de debut;Date de fin;Grandeur physique;Grandeur metier;Etape metier;Unite;Pas en minutes
+Identifiant PRM;Type de donnees;Date de debut;Date de fin;Grandeur physique;Grandeur metier;Etape metier;Unite;Pas en minutes
 19154413754808;Courbe de charge;06/10/2017;12/01/2018;Energie active;Consommation;Comptage Brut;W;30
 Horodate;Valeur
 2017-10-06T00:30:00+02:00;

@@ -14,6 +14,7 @@ class FilePaser extends Parser
 
     public function loadFile(String $filename){
         $path = '/var/www/html/public/uploads/';
+        $path = storage_path('app/');
         $ptr = fopen($path.$filename, "r");
         $contenu = fread($ptr, filesize($path.$filename));
         fclose($ptr);
