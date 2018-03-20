@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Parser\FilePaser;
 use Illuminate\Console\Command;
 
 class importFile extends Command
@@ -28,8 +29,6 @@ class importFile extends Command
     public function __construct()
     {
         parent::__construct();
-        //for fichier temp
-        var_dump(opendir(storage_path('app/temp/')));
     }
 
     /**
@@ -39,6 +38,22 @@ class importFile extends Command
      */
     public function handle()
     {
-        //
+        $path = storage_path('app/temp/');
+        if (is_dir($path)) {
+            if ($dh = opendir($path)) {
+                while (($file = readdir($dh)) !== false) {
+                    if(filetype($path . $file)=="file"){
+                        if(!strpos($file,'-')) {
+                            $filetab = explode('.', $file);
+                            rename($path . $file, $path . '-' . $file);
+                            $parser = new FilePaser();
+                            $parser->loadFile('-'.$file, $path, $filetab[0]);
+                            unlink($path . '-' . $file);
+                        }
+                    }
+                }
+                closedir($dh);
+            }
+        }
     }
 }

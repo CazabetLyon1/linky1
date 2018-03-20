@@ -20,8 +20,6 @@ class UploadController extends Controller
         $user_id = Auth::id();
         rename($path_init.$filename,$path.$user_id.".txt");
         //TODO return a view
-        var_dump(opendir(storage_path('app/temp/')));
-
         return 'Upload successful!';
     }
 
