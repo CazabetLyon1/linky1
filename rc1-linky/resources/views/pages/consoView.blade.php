@@ -95,7 +95,7 @@
                                     }
                                 </style>
                                 <div class="chart">
-                                <canvas id="canvas" style="max-height:600px"></canvas>
+                                    <div id="container" style="min-width: 310px; height: 100%; max-width: 100%; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -109,11 +109,47 @@
 
 @endsection
 @section('script')
+    <script src="bowser_components/Highcharts/code/higcharts.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+        var lab = [];
+        var val = [];
+        var data = {!! $data1 !!};
+        for(var it in data)
+        {
+            val.push([new Date(data[it].horodate), data[it].value]);
+        }
+        console.log(val);
 
+        Highcharts.stockChart('container', {
+
+
+            rangeSelector: {
+                selected: 1
+            },
+
+            title: {
+                text: 'AAPL Stock Price'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+
+            series: [{
+                name: 'AAPL',
+                data: val,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+
+    </script>
+    <!--
     <script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
     <script src="bower_components/hammerJs/hammer.min.js"></script>
     <script src="bower_components/chart.js/plugin/chartzoom.js"></script>
-    <!-- page script -->
     <script>
         var timeFormat = 'MM/DD/YYYY HH:mm';
         var lab = [];
@@ -154,10 +190,10 @@
                 zoom: {
                     enabled: true,
                     mode: 'xy'
-                },
+                }
             }
         });
 
 
-    </script>
+    </script>-->
 @endsection
