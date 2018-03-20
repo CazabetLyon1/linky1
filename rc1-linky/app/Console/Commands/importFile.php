@@ -43,7 +43,7 @@ class importFile extends Command
             if ($dh = opendir($path)) {
                 while (($file = readdir($dh)) !== false) {
                     if(filetype($path . $file)=="file"){
-                        if(!strpos($file,'-')) {
+                        if(strpos($file,'-')===false) {
                             $filetab = explode('.', $file);
                             rename($path . $file, $path . '-' . $file);
                             $parser = new FilePaser();
