@@ -65,7 +65,7 @@
                             <div class="col-xs-7">
                                 <div class="checkbox icheck">
                                     <label>
-                                        <input type="checkbox" required> J'adère aux  <a href="#">termes</a>
+                                        <input type="checkbox" required> J'adhère aux  <a href="#">termes</a>
                                     </label>
                                 </div>
                                 <script>
@@ -85,13 +85,13 @@
                             <!-- /.col -->
                         </div>
 
-                        <div class="social-auth-links text-center">
-                            <p>- OR -</p>
-                            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Me connecter avec
-                                Facebook</a>
-                            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Me connecter avec
-                                Google+</a>
-                        </div>
+                        {{--<div class="social-auth-links text-center">--}}
+                            {{--<p>- OR -</p>--}}
+                            {{--<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Me connecter avec--}}
+                                {{--Facebook</a>--}}
+                            {{--<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Me connecter avec--}}
+                                {{--Google+</a>--}}
+                        {{--</div>--}}
                         <a class="btn btn-link" href="{{ route('login') }}">J'ai déja un compte</a>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="/" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>RC1</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -52,7 +52,7 @@
                             <div class="pull-right">
                                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <Deconnection></Deconnection>
+                                    Déconnexion
                                 </a>
                             </div>
 

@@ -4,9 +4,8 @@
     <div class="wrapper">
         <body class="hold-transition skin-blue sidebar-mini">
         @include('navbar.navbarHeader')
-        @include('navbar.navbarSidebar')
+        @include('navbar.navbarSidebar',['page'=>'importPage'])
             <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
                         Importer
@@ -16,42 +15,31 @@
 
                 <section class="content">
                     <div class="row">
-                        <!-- left column -->
                         <div class="col-md-12">
-                            <!-- general form elements -->
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Quick Example</h3>
+                                    <h3 class="box-title">Importer votre fichier de consommation</h3>
                                 </div>
-                                <!-- /.box-header -->
-                                <!-- form start -->
-                                <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                        <div class="form-group">
-                                            <label for="file_upload">Selectionner un fichier</label>
-                                            <input type="file" id="file_upload" name="file_upload" accept=".csv">
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <div class="form-group">
+                                                <label for="file_upload">Selectionner un fichier</label>
+                                                <input type="file" id="file_upload" name="file_upload" accept=".csv">
 
-                                            <p class="help-block">Le fichier selectionner sera upload sur nos serveur et restera confidentiel. </p>
-                                        </div>
-                                    <!-- /.box-body -->
-
-                                    <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">Upload</button>
+                                                <p class="help-block">Le fichier selectionner sera stocké sur nos serveur et restera strictement confidentiel. </p>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                                        </form>
                                     </div>
-                                </form>
+                                </div>
                             </div>
 
                         </div>
                     </div>
                 </section>
             </div>
-        public function store(Request $request)
-        {
-        $request->logo->store('logos');
-        }
-
-
-                <!-- /.box -->
         </body>
     </div>
 

@@ -4,7 +4,7 @@
     <div class="wrapper">
         <body class="hold-transition skin-blue sidebar-mini">
             @include('navbar.navbarHeader')
-            @include('navbar.navbarSidebar')
+            @include('navbar.navbarSidebar',['page'=>'accueil'])
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">

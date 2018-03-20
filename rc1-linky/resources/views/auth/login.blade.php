@@ -11,7 +11,7 @@
             <a><b>RC1</b> - Linky</a>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg">Enregistrez vous avant de continuer.</p>
+            <p class="login-box-msg">Connectez-vous avant de continuer.</p>
 
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
@@ -56,18 +56,18 @@
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-4">
                         <button type="submit" class="btn btn-primary">
-                            Connection
+                            Connexion
                         </button>
                    </div>
                 </div>
             </form>
-            <div class="social-auth-links text-center">
-                  <p>- OR -</p>
-                  <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-                    Facebook</a>
-                  <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                    Google+</a>
-            </div>
+            {{--<div class="social-auth-links text-center">--}}
+                  {{--<p>- OR -</p>--}}
+                  {{--<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using--}}
+                    {{--Facebook</a>--}}
+                  {{--<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using--}}
+                    {{--Google+</a>--}}
+            {{--</div>--}}
              <a class="btn btn-link" href="{{ route('password.request') }}">Mot de passe oublié</a>
              <a class="btn btn-link" href="{{ route('register') }}">Créer un compte</a>
 

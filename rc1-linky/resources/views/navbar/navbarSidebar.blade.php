@@ -8,18 +8,26 @@
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->name }}</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Certifié</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> Connecté</a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Menu</li>
-            <li  class="">
+        @if ($page=="accueil")
+            <li class="active">
+        @else
+            <li>
+        @endif
                 <a href="/">
-                    <i class="fa fa-home"></i> <span>Acceuil</span>
+                    <i class="fa fa-home"></i> <span>Accueil</span>
                 </a>
             </li>
+        @if ($page=="consoView" || $page=="importPage")
             <li class="treeview active">
+        @else
+            <li class="treeview">
+        @endif
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Ma consommation</span>
                     <span class="pull-right-container">
@@ -27,12 +35,20 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                @if ($page=="consoView")
                     <li class="active">
+                @else
+                    <li>
+                @endif
                         <a href="/consoView">
                             <i class="fa fa-circle-o"></i>Visualisation
                         </a>
                     </li>
+                @if ($page=="importPage")
+                    <li class="active">
+                @else
                     <li>
+                @endif
                         <a href="/importPage">
                             <i class="fa fa-circle-o">
 
@@ -41,7 +57,11 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            @if ($page=="parametre")
+                <li class="active">
+            @else
+                <li>
+            @endif
                 <a href="/parameters">
                     <i class="fa fa-wrench"></i>
                     <span>Paramètres</span>

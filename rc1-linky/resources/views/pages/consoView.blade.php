@@ -4,14 +4,13 @@
     <div class="wrapper">
         <body class="hold-transition skin-blue sidebar-mini">
         @include('navbar.navbarHeader')
-        @include('navbar.navbarSidebar')
+        @include('navbar.navbarSidebar',['page'=>'consoView'])
 
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Importer
-                        <small>Importer un fichier</small>
+                        Ma consommation
                     </h1>
                 </section>
 
@@ -83,7 +82,7 @@
                     <div class="nav-tabs-custom">
                         <!-- Tabs within a box -->
                         <ul class="nav nav-tabs pull-right">
-                            <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                            <li class="pull-left header">Ma consommation</li>
                         </ul>
                         <div class="tab-content no-padding">
                             <!-- Morris chart - Sales -->
@@ -131,7 +130,7 @@
                 labels: lab,
                 datasets: [{
                     data: val,
-                    label: "Africa",
+                    label: "Consommation en kw",
                     borderColor: "#3e95cd",
                     fill: false
                 }
@@ -143,8 +142,8 @@
                     position: 'top',
                 },
                 title: {
-                    display: true,
-                    text: 'Chart.js Bar Chart'
+                    display: false,
+                    text: 'Ma consommation électrique'
                 },
                 pan: {
                     enabled: true,
