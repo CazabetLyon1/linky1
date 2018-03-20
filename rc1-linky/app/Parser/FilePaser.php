@@ -9,9 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class FilePaser extends Parser
 {
 
-    public function loadFile(String $filename){
-        $path = '/var/www/html/public/uploads/';
-        $path = storage_path('app/');
+    public function loadFile(String $filename, String $path){
         $ptr = fopen($path.$filename, "r");
         $contenu = fread($ptr, filesize($path.$filename));
         fclose($ptr);

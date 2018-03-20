@@ -4,6 +4,7 @@ namespace App\Parser;
 
 
 use App\Conso;
+use Illuminate\Support\Facades\Auth;
 
 class Parser
 {
