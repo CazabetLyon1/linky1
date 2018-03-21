@@ -9,9 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class FilePaser extends Parser
 {
 
-    public function loadFile(String $filename){
-        $path = '/var/www/html/public/uploads/';
-        $path = storage_path('app/');
+    public function loadFile(String $filename, String $path, int $id){
         $ptr = fopen($path.$filename, "r");
         $contenu = fread($ptr, filesize($path.$filename));
         fclose($ptr);
@@ -22,11 +20,10 @@ class FilePaser extends Parser
         $contenu = implode(PHP_EOL, $contenu);
         $ptr = fopen($path.$filename, "w");
         fwrite($ptr, $contenu);
-
         Config::set('excel.csv.delimiter', ';');
         $data = Excel::load($path.$filename)->get();
         foreach ($data as $key => $value) {
-            $this->save(DateTime::createFromFormat("Y-m-d-H:i:sP", str_replace_first('T','-',$value['horodate'])),intval($value['valeur']));
+            $this->save(DateTime::createFromFormat("Y-m-d-H:i:sP", str_replace_first('T','-',$value['horodate'])),intval($value['valeur']),$id);
         }
     }
 

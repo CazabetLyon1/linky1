@@ -24,7 +24,7 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'file_upload' => 'required  '
+            'file_upload' => 'required'
         ];
     }
 }
