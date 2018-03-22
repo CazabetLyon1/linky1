@@ -12,13 +12,19 @@
 */
 
 use App\Http\Controllers\Graph;
+use App\Http\Controllers\DataGetter;
 use App\Http\Controllers\UploadFileController;
 
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
-        return view('pages.home');
+        return view('pages.home', [
+                                        'moy7'=>DataGetter::getMoy7(Auth::id()),
+                                        'moyPrev'=>DataGetter::getMoyprev(Auth::id()),
+                                        'maxPrev'=>DataGetter::getMaxPrev(Auth::id()),
+                                        'estimateCost'=>DataGetter::estimateCost(Auth::id()),
+        ]);
     });
 
     //Route::get('/import', "Controller@testExcel");
