@@ -17,7 +17,6 @@ class DataGetter extends Controller
                             ->select('consos.value')
                             ->where('user_id', '=', $val)
                             ->where('consos.horodate', '>=', DATE_ADD( Carbon::now(), $interval ))
-                            ->limit(2600)
                             ->avg('consos.value');
 
         //dd($data);
@@ -35,7 +34,6 @@ class DataGetter extends Controller
                             ->select('consos.value')
                             ->where('user_id', '=', $val)
                             ->where('consos.horodate', '>=', DATE_ADD( Carbon::now(), $interval ))
-                            ->limit(2600)
                             ->avg('consos.value');
 
         //dd($data);
@@ -54,7 +52,6 @@ class DataGetter extends Controller
                             ->select('consos.value')
                             ->where('user_id', '=', $val)
                             ->where('consos.horodate', '>=', DATE_ADD( Carbon::now(), $interval ))
-                            ->limit(2600)
                             ->max('consos.value');
 
         //dd($data);

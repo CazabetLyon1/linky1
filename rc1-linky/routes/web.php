@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
                                         'moyPrev'=>DataGetter::getMoyprev(Auth::id()),
                                         'maxPrev'=>DataGetter::getMaxPrev(Auth::id()),
                                         'estimateCost'=>DataGetter::estimateCost(Auth::id()),
+                                        'graphMoy7Prev'=>Graph::getGraphmoy7Prev(Auth::id()),
         ]);
     });
 

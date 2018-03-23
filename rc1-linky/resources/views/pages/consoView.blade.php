@@ -11,6 +11,7 @@
                 <section class="content-header">
                     <h1>
                         Ma consommation
+                        <small> - Visualisation</small>
                     </h1>
                 </section>
 
@@ -31,7 +32,7 @@
                                     }
                                 </style>
                                 <div class="chart">
-                                    <div id="container" style="min-width: 310px; height: 100%; max-width: 100%; margin: 0 auto"></div>
+                                    <div id="Graph_1" style="min-width: 310px; height: 100%; max-width: 100%; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -45,9 +46,7 @@
 
 @endsection
 @section('script')
-    <script src="bowser_components/Highcharts/code/higcharts.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script>
         var lab = [];
         var val = [];
@@ -58,7 +57,7 @@
         }
         console.log(val);
 
-        Highcharts.stockChart('container', {
+        Highcharts.stockChart('Graph_1', {
 
 
             rangeSelector: {
