@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.consoView', ['data1'=>Graph::getGraph(Auth::id(),'DEFAULT')]);
     });
     Route::get('/parameters',function () {
-        return view('pages.parametersEdit');
+        return view('pages.parametersEdit', ['datasupp'=>User::getUsers(Auth:id())]);
     });
 
 });
