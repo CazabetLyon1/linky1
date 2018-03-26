@@ -98,63 +98,72 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
 
     <script>
+        function getDayOfWeek(date) {
+            var dayOfWeek = new Date(date).getDay();
+            return isNaN(dayOfWeek) ? null : ['0', '1', '2', '3', '4', '5', '6'][dayOfWeek];
+        }
 
-        var lab = [];
-        var val = [];
+        var PrevVals = [];
+        var TypeVals = [];
         var graphMoy7Prev = {!! $graphMoy7Prev !!};
+        var GraphType = {!! $GraphType !!};
         for(var it in graphMoy7Prev)
         {
-            val.push([graphMoy7Prev[it].m_date, graphMoy7Prev[it].m_value]);
+            PrevVals.push([getDayOfWeek(graphMoy7Prev[it].m_date), graphMoy7Prev[it].m_value]);
         }
-        console.log(val);
+        for(var it in GraphType )
+        {
+            TypeVals.push([GraphType[it].m_day, GraphType[it].m_value]);
+        }
+        console.log(TypeVals);
 
         Highcharts.chart('Graph_1', {
             chart: {
                 type: 'column'
             },
             title: {
-                text: 'Consommation des 7 derniers jours'
-            },
-            subtitle: {
-                text: '<a href="">Moyenne par jours</a>'
+                text: 'Suivi de Consommation'
             },
             xAxis: {
-                type: 'category',
-                labels: {
-                    rotation: -45,
-                    style: {
-                        fontSize: '13px',
-                        fontFamily: 'Verdana, sans-serif'
-                    }
-                }
+                categories: [
+                        'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi','Samedi','Dimanche'
+                ]
             },
-            yAxis: {
+            yAxis: [{
                 min: 0,
                 title: {
                     text: 'kw/h'
                 }
             },
+            {
+                title: {
+                    text: 'Consommation / jours'
+                },
+                opposite: true
+            }],
             legend: {
-                enabled: false
+                shadow: false
             },
             tooltip: {
-                pointFormat: 'Consommation : <b>{point.y:.1f} Kw/h</b>'
+                shared: true
+            },
+            plotOptions: {
+                column: {
+                    grouping: false,
+                    shadow: false,
+                    borderWidth: 0
+                }
             },
             series: [{
-                name: 'Population',
-                data: val,
-                dataLabels: {
-                    enabled: true,
-                    rotation: -90,
-                    color: '#FFFFFF',
-                    align: 'right',
-                    format: '{point.y:.1f}', // one decimal
-                    y: 10, // 10 pixels down from the top
-                    style: {
-                        fontSize: '13px',
-                        fontFamily: 'Verdana, sans-serif'
-                    }
-                }
+                name: 'Consommation Type',
+                color: 'rgba(165,170,217,1)',
+                data: TypeVals,
+                pointPadding: 0.3,
+            }, {
+                name: 'Consommation des derniers jours',
+                color: 'rgba(126,86,134,.9)',
+                data: PrevVals,
+                pointPadding: 0.4,
             }]
         });
     </script>

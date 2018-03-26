@@ -48,7 +48,6 @@
 @section('script')
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script>
-        var lab = [];
         var val = [];
         var data = {!! $data1 !!};
         for(var it in data)
