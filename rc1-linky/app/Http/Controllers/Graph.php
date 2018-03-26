@@ -54,5 +54,18 @@ class Graph extends Controller
         return $data;
     }
 
+    public static  function getGraphTimeConso($val)
+    {
+        $interval = new DateInterval('P7D')   ;
+        $interval->invert= 1;
+        $data = \DB::table('consos')
+            ->select(DB::raw("TIME_FORMAT(consos.horodate, '%H:%i') as m_time, AVG(consos.value) as m_value"))
+            ->where('user_id', '=', $val)
+            ->groupBy('m_time')
+            ->get()->toJson();
+        //dd($data);
+        return $data;
+    }
+
 }
 //faire class graphData
