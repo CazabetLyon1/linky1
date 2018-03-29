@@ -38,7 +38,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/upload', "UploadController@uploadSubmit")->name('upload');
 
     Route::get('/consoView',function () {
-        return view('pages.consoView', ['data1'=>Graph::getGraph(Auth::id(),'DEFAULT')]);
+        return view('pages.consoView', [
+                                        'data1'=>Graph::getGraph(Auth::id(),'DEFAULT'),
+                                        'graphMoy7Prev'=>Graph::getGraphmoy7Prev(Auth::id()),
+                                        'GraphType'=>Graph::getGraphType(Auth::id()),
+                                        'GraphTimeConso'=>Graph::getGraphTimeConso(Auth::id())
+        ]);
     });
     /*Route::get('/parameters',function () {
         return view('pages.parametersEdit' ['DataForm'=>UserForm::getUsers(Auth:id())]);
