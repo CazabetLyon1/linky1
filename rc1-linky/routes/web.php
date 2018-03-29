@@ -40,13 +40,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/consoView',function () {
         return view('pages.consoView', ['data1'=>Graph::getGraph(Auth::id(),'DEFAULT')]);
     });
-    Route::post('/parameters',function () {
-        return view('pages.parametersEdit', ['DataForm'=>UserForm::getUsers(Auth:id())]);
+    /*Route::get('/parameters',function () {
+        return view('pages.parametersEdit' ['DataForm'=>UserForm::getUsers(Auth:id())]);
+    });*/
+    Route::get('/parameters', function(){
+        return view('pages.parametersEdit');
     });
+
+    Route::post('/validation', "ValidationController@UserForm")->name('validation');
 
 });
 
 
 
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginC    ontroller@logout');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
