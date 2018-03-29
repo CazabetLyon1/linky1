@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('logement');
-            $table->string('superficie');
-            $table->string('habitants');
+            $table->integer('superficie');
+            $table->integer('habitants');
             $table->rememberToken();
             $table->timestamps();
         });
