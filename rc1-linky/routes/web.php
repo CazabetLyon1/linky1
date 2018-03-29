@@ -40,8 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/consoView',function () {
         return view('pages.consoView', ['data1'=>Graph::getGraph(Auth::id(),'DEFAULT')]);
     });
-    Route::get('/parameters',function () {
-        return view('pages.parametersEdit', ['datasupp'=>User::getUsers(Auth:id())]);
+    Route::post('/parameters',function () {
+        return view('pages.parametersEdit', ['DataForm'=>UserForm::getUsers(Auth:id())]);
     });
 
 });
