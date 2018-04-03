@@ -50,7 +50,7 @@
                                 <div class="nav-tabs-custom " >
                                     <!-- Tabs within a box -->
                                     <ul class="nav nav-tabs pull-right">
-                                        <li class="pull-left header">Consommation Type / 30 min</li>
+                                        <li class="pull-left header">Consommation Type / 30 min par jours</li>
                                     </ul>
                                     <div class="tab-content no-padding">
                                         <!-- Morris chart - Sales -->
@@ -162,16 +162,61 @@
         });
 
 
-        var GraphTimeConso = [];
-        var GraphTimeConsoLab = [];
-        var data2 = {!! $GraphTimeConso !!};
-        for(var it in data2)
-        {
-            GraphTimeConso.push([data2[it].m_time, data2[it].m_value]);
-            GraphTimeConsoLab.push([data2[it].m_time]);
-        }
+        var GraphTimeConso0 = [];
+        var GraphTimeConso1 = [];
+        var GraphTimeConso2 = [];
+        var GraphTimeConso3 = [];
+        var GraphTimeConso4 = [];
+        var GraphTimeConso5 = [];
+        var GraphTimeConso6 = [];
 
-    console.log(GraphTimeConso);
+        var GraphTimeConsoLab = [];
+        var dat = {!! $GraphTimeConso !!};
+        console.log({!! $GraphTimeConso !!});
+        for(var it in dat)
+        {
+            if(dat[it].m_day == 0)
+            {
+                GraphTimeConso0.push([dat[it].m_time, dat[it].m_value]);
+                GraphTimeConsoLab.push([dat[it].m_time]);
+            }
+            else if(dat[it].m_day == 1)
+            {
+                GraphTimeConso1.push([dat[it].m_time, dat[it].m_value]);
+            }
+            else if(dat[it].m_day == 2)
+            {
+
+                GraphTimeConso2.push([dat[it].m_time, dat[it].m_value]);
+            }
+            else if(dat[it].m_day == 3)
+            {
+                GraphTimeConso3.push([dat[it].m_time, dat[it].m_value]);
+            }
+            else if(dat[it].m_day == 4)
+            {
+                GraphTimeConso4.push([dat[it].m_time, dat[it].m_value]);
+            }
+            else if(dat[it].m_day == 5)
+            {
+                GraphTimeConso5.push([dat[it].m_time, dat[it].m_value]);
+            }
+            else if(dat[it].m_day == 6)
+            {
+                GraphTimeConso6.push([dat[it].m_time, dat[it].m_value]);
+            }
+        }
+        console.log(GraphTimeConso0);
+        console.log(GraphTimeConso1);
+        console.log(GraphTimeConso2);
+        console.log(GraphTimeConso3);
+        console.log(GraphTimeConso4);
+        console.log(GraphTimeConso5);
+        console.log(GraphTimeConso6);
+
+
+
+
         Highcharts.chart('Graph_2', {
             chart: {
                 type: 'column'
@@ -190,20 +235,50 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Kw/h'
+                    text: 'Kw/h en %'
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'percent'
                 }
             },
             legend: {
-                enabled: false
+                enabled: true
             },
             tooltip: {
                 pointFormat: '{point.y:.1f} Kw/h'
             },
-            series: [{
-                name: 'Population',
-                data: GraphTimeConso
-
-            }]
+            series: [
+                {
+                name: 'lundi',
+                data: GraphTimeConso0
+                },
+                {
+                    name: 'mardi',
+                    data: GraphTimeConso1
+                },
+                {
+                    name: 'mercredi',
+                    data: GraphTimeConso2
+                },
+                {
+                    name: 'jeudi',
+                    data: GraphTimeConso3
+                },
+                {
+                    name: 'vendredi',
+                    data: GraphTimeConso4
+                },
+                {
+                    name: 'samedi',
+                    data: GraphTimeConso5
+                },
+                {
+                    name: 'dimanche',
+                    data: GraphTimeConso6
+                }
+            ]
         });
 
         function getDayOfWeek(date) {

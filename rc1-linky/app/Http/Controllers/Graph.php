@@ -59,9 +59,9 @@ class Graph extends Controller
         $interval = new DateInterval('P7D')   ;
         $interval->invert= 1;
         $data = \DB::table('consos')
-            ->select(DB::raw("TIME_FORMAT(consos.horodate, '%H:%i') as m_time, AVG(consos.value) as m_value"))
+            ->select(DB::raw("TIME_FORMAT(consos.horodate, '%H:%i') as m_time,WEEKDAY(consos.horodate) as m_day, AVG(consos.value) as m_value"))
             ->where('user_id', '=', $val)
-            ->groupBy('m_time')
+            ->groupBy('m_day', 'm_time')
             ->get()->toJson();
         //dd($data);
         return $data;
