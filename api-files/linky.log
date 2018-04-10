@@ -229,3 +229,24 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:53:44,042 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:53:44,276 logged in successfully!
+2018-04-10 13:53:44,276 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
