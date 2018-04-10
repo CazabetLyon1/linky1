@@ -16,7 +16,7 @@ class Parser
             $conso->user_id = $id;
             $conso->save();
         }catch (\Throwable $t){
-            echo $t->getMessage();
+
         }
     }
 

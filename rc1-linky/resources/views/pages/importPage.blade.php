@@ -4,7 +4,7 @@
     <div class="wrapper">
         <body class="hold-transition skin-blue sidebar-mini">
         @include('navbar.navbarHeader')
-        @include('navbar.navbarSidebar',['page'=>'importPage'])
+        @include('navbar.navbarSidebar',['page'=>'consoView'])
             <div class="content-wrapper">
                 <section class="content-header">
                     <h1>
@@ -35,7 +35,19 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Récupération via Enedis</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <p class="help-block">Si vous cliquez sur le bouton ci-dessous nous allons récupérer les données de votre consommation automatiquement</p>
+                                        <button type="submit" class="btn btn-primary">Récupérer</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

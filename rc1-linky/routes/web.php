@@ -54,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/validation', "ValidationController@UserForm")->name('validation');
 
+    Route::get('/loadViaEnedis', "APIController@retrieveData");
+
 });
 
 
