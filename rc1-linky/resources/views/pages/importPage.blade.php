@@ -79,7 +79,6 @@
                 $("#returnMsg").empty();
                 $("#returnMsg").append("<div class='loader'></div>");
 
-                //$("#returnMsg").append(" <img src='https://cdn2.iconfinder.com/data/icons/men-women-from-all-over-the-world-1/120/people-person-avatar-face-user-man-woman_68-512.png' style='width:50px;height:50px;'> Un petit chinois va se charger de votre requete .... ");
             $.ajax({
                 type:'get',
                 url:'/loadViaEnedis',
