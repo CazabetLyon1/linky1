@@ -6,7 +6,7 @@
 2. Cloner le dépot `git clone https://forge.univ-lyon1.fr/p1707902/RC1-Linky.git`.
 3. Se placer dans le dossier `RC1-Linky` 
 4. Donner les droits d'écriture dans les dossiers `rc1-linky/storage`, `mongo`, `nginx`, `api-files` et sur les fichiers `api-files/sem.txt` et `api-files/linky.log`
-5. Sur linux : executer `sudo ./launcher.sh` ou `sudo ./launcher-mac.sh` (ne pas oublier de donner les droits d'éxécution `chmod +x launcher.sh`)
+5. Executer `sudo ./launcher.sh` ou `sudo ./launcher-mac.sh` (ne pas oublier de donner les droits d'éxécution `chmod +x launcher.sh`)
 6. Le projet fonctionne en local, rendez-vous sur [rc1-linky.fr](http://rc1-linky.fr) sur linux ou [localhost](http://localhost) sur mac
 7. Se connecter au conteneur php_fpm : `docker exec -it php_fpm bash`
 8. Exécuter `php artisan migrate`

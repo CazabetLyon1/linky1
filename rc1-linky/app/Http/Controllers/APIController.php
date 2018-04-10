@@ -26,7 +26,7 @@ class APIController extends Controller
         }else {
             $this->dispatch(new RetrieveEnedisData($user));
         }
-        echo response()->json($status);
+        echo json_encode($status);
     }
 
 }
