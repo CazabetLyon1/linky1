@@ -15,7 +15,7 @@
                                     <!-- Tabs within a box -->
                                     <ul class="nav nav-tabs pull-right">
                                         <li class="pull-left header">Paramètres</li>
-                                    </ul>s
+                                    </ul>
                                     <div class="container">
                                         <form action="action_page.php">
                                                 <div class="row">
