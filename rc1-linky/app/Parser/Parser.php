@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Parser
 {
-    protected function save(\DateTime $date, int $value, int $id){
+    public function save(\DateTime $date, float $value, int $id){
         try {
             $conso = new Conso();
             $conso->horodate = $date;
@@ -16,7 +16,7 @@ class Parser
             $conso->user_id = $id;
             $conso->save();
         }catch (\Throwable $t){
-
+            echo $t->getMessage();
         }
     }
 

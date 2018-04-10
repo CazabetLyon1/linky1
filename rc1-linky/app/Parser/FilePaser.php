@@ -23,7 +23,7 @@ class FilePaser extends Parser
         Config::set('excel.csv.delimiter', ';');
         $data = Excel::load($path.$filename)->get();
         foreach ($data as $key => $value) {
-            $this->save(DateTime::createFromFormat("Y-m-d-H:i:sP", str_replace_first('T','-',$value['horodate'])),intval($value['valeur']),$id);
+            $this->save(DateTime::createFromFormat("Y-m-d-H:i:sP", str_replace_first('T','-',$value['horodate'])),floatval($value['valeur']),$id);
         }
     }
 
