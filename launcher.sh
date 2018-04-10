@@ -17,7 +17,6 @@ IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_defau
 while [ -z $IP_ADDRESS ]
 do
     sleep 1
-    echo "Waiting api container"
     IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_default.IPAddress}}' api)
 done
 
@@ -27,7 +26,6 @@ IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_defau
 while [ -z $IP_ADDRESS ]
 do
     sleep 1
-    echo "Waiting php fpm container"
     IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_default.IPAddress}}' php_fpm)
 done
 
@@ -35,7 +33,6 @@ IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_defau
 while [ -z $IP_ADDRESS ]
 do
     sleep 1
-    echo "Waiting nginx container"
     IP_ADDRESS=$(docker inspect --format='{{.NetworkSettings.Networks.rc1linky_default.IPAddress}}' nginx)
 done
 

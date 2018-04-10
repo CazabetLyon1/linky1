@@ -42,5 +42,7 @@ services:
         build:
           context: api-docker
         container_name: api
+        ports:
+          - 1234:80
         volumes:
           - ./api-files/:/var/www/html
