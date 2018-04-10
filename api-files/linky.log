@@ -19,3 +19,213 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:00:01,576 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:00:02,066 logged in successfully!
+2018-04-10 13:00:02,066 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:13:24,121 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:13:24,358 logged in successfully!
+2018-04-10 13:13:24,358 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:15:01,991 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:15:02,216 logged in successfully!
+2018-04-10 13:15:02,216 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:20:44,459 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:20:44,691 logged in successfully!
+2018-04-10 13:20:44,691 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:22:51,333 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:22:51,569 logged in successfully!
+2018-04-10 13:22:51,569 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:24:16,341 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:24:16,576 logged in successfully!
+2018-04-10 13:24:16,576 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:26:19,757 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:26:20,041 logged in successfully!
+2018-04-10 13:26:20,041 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:29:24,350 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:29:24,660 logged in successfully!
+2018-04-10 13:29:24,660 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:33:42,600 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:33:42,842 logged in successfully!
+2018-04-10 13:33:42,842 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-10 13:34:38,187 logging in as adrien.mevelec@hotmail.fr...
+2018-04-10 13:34:38,490 logged in successfully!
+2018-04-10 13:34:38,490 retreiving data...
+Traceback (most recent call last):
+  File "./linky_json.py", line 184, in <module>
+    main()
+  File "./linky_json.py", line 170, in main
+    res_hour = linky.get_data_per_hour(token, DATEDEBUT, DATEFIN)
+  File "/var/www/html/linky.py", line 72, in get_data_per_hour
+    return _get_data(session, 'urlCdcHeure', start_date, end_date)
+  File "/var/www/html/linky.py", line 122, in _get_data
+    res = req.json()
+  File "/usr/local/lib/python3.5/dist-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
