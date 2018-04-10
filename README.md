@@ -2,31 +2,23 @@
 
 ## Installation du projet
 
-1. Installer `docker` et `docker-compose`.
+1. Installer `docker` et `docker-compose` (sur mac il est dans le paquet docker).
 2. Cloner le dépot `git clone https://forge.univ-lyon1.fr/p1707902/RC1-Linky.git`.
 3. Se placer dans le dossier `RC1-Linky` 
 4. Donner les droits d'écriture dans les dossiers `rc1-linky/storage`, `mongo`, `nginx`, `api-files` et sur les fichiers `api-files/sem.txt` et `api-files/linky.log`
-5. Executer `sudo ./launcher.sh` (ne pas oublier de donner les droits d'éxécution `chmod +x launcher.sh`)
-6. Le projet fonctionne en local, rendez-vous sur [rc1-linky.fr](http://rc1-linky.fr)
+5. Executer `sudo ./launcher.sh` ou `sudo ./launcher-mac.sh` (ne pas oublier de donner les droits d'éxécution `chmod +x launcher.sh`)
+6. Le projet fonctionne en local, rendez-vous sur [rc1-linky.fr](http://rc1-linky.fr) sur linux ou [localhost](http://localhost) sur mac
 7. Se connecter au conteneur php_fpm : `docker exec -it php_fpm bash`
 8. Exécuter `php artisan migrate`
 
+
 ## API 
-Une api "maison" est disponible à l'adresse [api.rc1-linky.fr](http://api.rc1-linky.fr) en `POST`, elle prend en paramètres `login`, `mdp` et `type` (hour, day, month, year). 
+Une api "maison" est disponible à l'adresse [api.rc1-linky.fr](http://api.rc1-linky.fr) sur linux ou [localhost:1234](http://localhost:1234) sur mac, elle prend en paramètres `POST` : `login`, `mdp` et `type` (hour, day, month, year). 
 
 Si le type est `hour` on peut ajouter les paramètres `debut` et `fin` au format dd/mm/yyyy. Le début est au minimum un mois avant la date du jour.
 
 Cette api utilise en partie le projet [Jeedom Linky](https://github.com/Asdepique777/jeedom_linky).
 
-## Base de données
-
-1. Depuis le dossier du projet : `sudo docker exec -it php_fpm bash`
-2. Puis : `php artisan migrate`
-3. Trouver le nom : `sudo docker ps` -> colonne names ligne contenant mysl (rc1linky_mysql_1)
-3. Pour demarrer le bash : `sudo docker exec -it rc1linky_mysql_1 bash`
-4. Se connecter en admin : `mysql -u root -p123456`
-5. Choisir la Base de donnée : `use laravel;`
-6. et c'est parti : `Select * from users;`
 
 
 

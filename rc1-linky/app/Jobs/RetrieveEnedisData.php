@@ -39,7 +39,6 @@ class RetrieveEnedisData implements ShouldQueue
      */
     public function handle()
     {
-        Log::info('1');
         $begin = new DateTime();
         $begin->sub(new DateInterval('P1Y'));
         $client = new Client();
@@ -54,16 +53,13 @@ class RetrieveEnedisData implements ShouldQueue
         ]);
 
         $result = json_decode($res->getBody(), true);
-        var_dump($result);
         if ($result['status'] == "ok") {
-            Log::info('2');
             $parser = new Parser();
             $last=0;
             foreach ($result['data'] as $conso) {
-                Log::info('3');
                 if($last==$conso['conso'] && $last==0){
                     $last=$conso['conso'];
-                }else {
+                }else{
                     $parser->save(DateTime::createFromFormat("d-m-Y-H:i", str_replace_first('+', '-', str_replace_first('h', ':', $conso['time']))), floatval($conso['conso']), $this->user->id);
                 }
             }
