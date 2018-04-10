@@ -10,12 +10,12 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="box box-primary">
+                            <div class="box">
                                 <div class="nav-tabs-custom" >
                                     <!-- Tabs within a box -->
                                     <ul class="nav nav-tabs pull-right">
                                         <li class="pull-left header">Paramètres</li>
-                                    </ul>
+                                    </ul>s
                                     <div class="container">
                                         <form action="action_page.php">
                                                 <div class="row">
