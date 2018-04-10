@@ -17,8 +17,9 @@
                                         <li class="pull-left header">Paramètres</li>
                                     </ul>
                                     <div class="container">
-                                        <form action="action_page.php">
-                                                <div class="row">
+                                        <form action="{{ route('validation') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <div class="row">
                                                     <div class="col-md-12">
                                                         <label for="fname">Prénom</label>
                                                     </div>

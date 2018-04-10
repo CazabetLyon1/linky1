@@ -11,11 +11,11 @@ class ValidationController extends Controller
         return view('pages.parametersEdit');
     }
 
-    public function UserForm(ValidationRequest $request)
+    public function UserForm($request)
     {
         $input = $request->only('prenom','name','login','pswd','ville','logement','superficie','habitants');
 
-        $user = Auth::user();
+        $user = Auth::id();
 
         
         $user->prenom = $input['prenom'];
@@ -26,6 +26,8 @@ class ValidationController extends Controller
         $user->logement = $input['logement'];
         $user->habitants = $input['habitants'];
 
+
+        $user->save();
 
         return 'Mise à jour du profil';
     }
