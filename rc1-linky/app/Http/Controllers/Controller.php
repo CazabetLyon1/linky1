@@ -17,15 +17,3 @@ class Controller extends BaseController
         $parser->loadFile("releve.csv");
     }
 }
-
-class DataForm{
-
-    public static function UserForm(){
-        $nom=Input::get('nom');
-        $prenom=Input::get('prenom');
-        $ville=Input::get('ville');
-        $logement=Input::get('logement');
-        $superficie=Input::get('superficie');
-        $habitants=Input::get('habitants');
-    }
-}
