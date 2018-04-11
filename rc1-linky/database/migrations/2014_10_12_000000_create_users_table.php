@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('prenom')->nullable();
             $table->string('logement')->nullable();
+            $table->string('ville')->nullable();
             $table->integer('superficie')->nullable();
             $table->integer('habitants')->nullable();
             $table->string('login_linky')->nullable();
