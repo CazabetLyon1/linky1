@@ -24,7 +24,7 @@
                                                         <label for="fname">Prénom</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+                                                        <input class="col-md-6" type="text" id="prenom" name="prenom" placeholder="Votre prénom" value="{{ Auth::user()->prenom }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -32,7 +32,7 @@
                                                         <label for="lname">Nom</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="nom" name="nom" placeholder="Votre nom">
+                                                        <input class="col-md-6" type="text" id="name" name="name" placeholder="Votre nom" value="{{ Auth::user()->name }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -40,7 +40,7 @@
                                                         <label for="lenedis">Login Enedis</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="login" name="login" placeholder="Votre login Enedis">
+                                                        <input class="col-md-6" type="text" id="login" name="login" placeholder="Votre login Enedis" value="{{ Auth::user()->login }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -48,7 +48,7 @@
                                                         <label for="penedis">Mot de passe Enedis</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="pswd" name="pswd" placeholder="Votre mot de passe Enedis">
+                                                        <input class="col-md-6" type="text" id="pswd" name="pswd" placeholder="Votre mot de passe Enedis" value="{{ Auth::user()->pswd }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -56,7 +56,7 @@
                                                         <label for="ville">Ville</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="ville" name="Ville" placeholder="Entrez le nom de votre ville">
+                                                        <input class="col-md-6" type="text" id="ville" name="Ville" placeholder="Entrez le nom de votre ville" value="{{ Auth::user()->ville }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -73,7 +73,7 @@
                                                         <label for="ville">Superficie</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="number" id="superficie" name="superficie" placeholder="Entrez votre superficie">
+                                                        <input class="col-md-6" type="number" id="superficie" name="superficie" placeholder="Entrez votre superficie" value="{{ Auth::user()->superficie }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -81,7 +81,7 @@
                                                         <label for="Habitants">Habitants</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="number" id="habitants" name="habitants" placeholder="Habitants du foyer">
+                                                        <input class="col-md-6" type="number" id="habitants" name="habitants" placeholder="Habitants du foyer" value="{{ Auth::user()->habitants }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
