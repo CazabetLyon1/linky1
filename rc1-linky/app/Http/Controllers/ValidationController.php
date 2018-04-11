@@ -22,7 +22,14 @@ class ValidationController extends Controller
         DB::table('users')
             ->where('id', Auth::id())
             ->update(
-                ['prenom' => 1, 'name' => 1, 'login_linky' => 1, 'mdp_linky' => 1, 'ville' => 1, 'logement' => 1, 'superficie' => 1, 'habitants' => 1]
+                ['prenom' => Input::post('prenom'),
+                    'name' => Input::post('name'),
+                    'login_linky' => Input::post('login'),
+                    'mdp_linky' => Input::post('pswd'),
+                    'ville' => Input::post('ville'),
+                    'logement' => Input::post('logement'),
+                    'superficie' => Input::post('superficie'),
+                    'habitants' => Input::post('habitants')]
 
             );
 
