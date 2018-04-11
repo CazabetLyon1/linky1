@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.parametersEdit');
     });
 
-    Route::post('/validation', "ValidationController@UserForm")->name('validation');
+    Route::post('/validation', "ValidationController@userForm")->name('validation');
 
     Route::get('/loadViaEnedis', "APIController@retrieveData");
 
