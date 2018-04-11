@@ -24,12 +24,6 @@ class ValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'prenom' => 'required',
-            'name' => 'required',
-            'login' => 'required',
-            'pswd' => 'required',
-            'ville'=> 'required',
-            'logement' => 'required',
             'superficie' => 'integer',
             'habitants' => 'integer'
         ];
