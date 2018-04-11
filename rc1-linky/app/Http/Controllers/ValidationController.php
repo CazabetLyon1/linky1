@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ValidationRequest;
+use Illuminate\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class ValidationController extends Controller
 {
@@ -11,21 +13,21 @@ class ValidationController extends Controller
         return view('pages.parametersEdit');
     }
 
-    public function UserForm($request)
+    public function userForm(ValidationRequest $request)
     {
         $input = $request->only('prenom','name','login','pswd','ville','logement','superficie','habitants');
 
-        $user = Auth::id();
+        $user = Auth::user();
 
-        
-        $user->prenom = $input['prenom'];
+
+        $user->prenom = $request['prenom'];
         $user->name = $input['name'];
         $user->login = $input['login'];
         $user->pswd = $input['pswd'];
         $user->ville = $input['ville'];
         $user->logement = $input['logement'];
+        $user->superficie = $input['superficie'];
         $user->habitants = $input['habitants'];
-
 
         $user->save();
 
