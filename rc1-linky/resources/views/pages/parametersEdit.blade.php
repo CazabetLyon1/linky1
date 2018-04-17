@@ -40,7 +40,7 @@
                                                         <label for="lenedis">Login Enedis</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="login" name="login" placeholder="Votre login Enedis" value="{{ Auth::user()->login }}">
+                                                        <input class="col-md-6" type="text" id="login" name="login" placeholder="Votre login Enedis" value="{{ Auth::user()->login_linky }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -48,17 +48,17 @@
                                                         <label for="penedis">Mot de passe Enedis</label>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="pswd" name="pswd" placeholder="Votre mot de passe Enedis" value="{{ Auth::user()->pswd }}">
+                                                        <input class="col-md-6" type="text" id="pswd" name="pswd" placeholder="Votre mot de passe Enedis" value="{{ Auth::user()->mdp_linky }}">
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <label for="ville">Ville</label>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <input class="col-md-6" type="text" id="ville" name="Ville" placeholder="Entrez le nom de votre ville" value="{{ Auth::user()->ville }}">
-                                                    </div>
-                                                </div>
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-md-12">--}}
+                                                        {{--<label for="ville">Ville</label>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-12">--}}
+                                                        {{--<input class="col-md-6" type="text" id="ville" name="Ville" placeholder="Entrez le nom de votre ville" value="{{ Auth::user()->ville }}">--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <label for="logement">Logement</label>

@@ -36,6 +36,7 @@ class RetrieveEnedisData implements ShouldQueue
      *
      * @return void
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function handle()
     {
