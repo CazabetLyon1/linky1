@@ -40,6 +40,7 @@ class RetrieveEnedisData implements ShouldQueue
      */
     public function handle()
     {
+        $status = ['status'=>'ok','error'=>null];
         $begin = new DateTime();
         $begin->sub(new DateInterval('P1Y'));
         $client = new Client();
@@ -64,6 +65,12 @@ class RetrieveEnedisData implements ShouldQueue
                     $parser->save(DateTime::createFromFormat("d-m-Y-H:i", str_replace_first('+', '-', str_replace_first('h', ':', $conso['time']))), floatval($conso['conso']), $this->user->id);
                 }
             }
+            $status['status']='ok';
+        }else{
+            $status['status']='ko';
+            $status['error']="Mauvais identifiants";
         }
+        echo json_encode($status);
+
     }
 }

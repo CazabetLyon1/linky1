@@ -23,10 +23,10 @@ class APIController extends Controller
         if(empty($user['login_linky']) || empty($user['mdp_linky'])){
             $status['status']='ko';
             $status['error']="Vous devez renseigner vos informations de connexion enedis";
+            echo json_encode($status);
         }else {
             $this->dispatch(new RetrieveEnedisData($user));
         }
-        echo json_encode($status);
     }
 
 }
