@@ -17,7 +17,7 @@ class CreateConsosTable extends Migration
             $table->dateTime('horodate');
             $table->float('value')->nullable();
             $table->integer('user_id')->unsigned();
-            $table->primary('horodate');
+            $table->primary(array('horodate','user_id'));
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
