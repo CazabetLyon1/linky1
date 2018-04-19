@@ -18,7 +18,7 @@ class Graph extends Controller
         $data = \DB::table('consos')
                             ->select('horodate','value')
                             ->where('user_id', '=', $val)
-                            ->limit(2600)->get()->toJson();
+                            ->get()->toJson();
 
         //dd($data);
         return $data;
@@ -26,15 +26,15 @@ class Graph extends Controller
     //TODO : check results
     public static function getGraphmoy7Prev($val)
     {
-        $interval = new DateInterval('P8D')   ;
+        $interval = new DateInterval('P7D')   ;
         $interval->invert= 1;
         $data = \DB::table('consos')
             ->select(DB::raw("DATE_FORMAT(consos.horodate, '%Y-%c-%d') as m_date , avg(consos.value) as m_value"))
             ->where('user_id', '=', $val)
             ->where('consos.horodate', '>=', DATE_ADD( Carbon::now(), $interval ))
             ->groupBy('m_date')
-            ->orderBy('m_date', 'desc')
-            ->limit(8)
+            ->orderBy('m_date', 'asc')
+            //->limit(7)
             ->get()/*->toJson()*/;
         $data = json_encode(array_slice(json_decode($data, true), 1));
         //dd($data);
@@ -43,8 +43,6 @@ class Graph extends Controller
 
     public static  function getGraphType($val)
     {
-        $interval = new DateInterval('P7D')   ;
-        $interval->invert= 1;
         $data = \DB::table('consos')
             ->select(DB::raw("WEEKDAY(consos.horodate) as m_day, AVG(consos.value) as m_value"))
             ->where('user_id', '=', $val)
