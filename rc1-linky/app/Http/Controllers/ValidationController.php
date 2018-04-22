@@ -33,6 +33,6 @@ class ValidationController extends Controller
 
             );
 
-        return redirect('/parameters');
+        return redirect()->back()->withSuccess('Profil mis à jour');
     }
 }
