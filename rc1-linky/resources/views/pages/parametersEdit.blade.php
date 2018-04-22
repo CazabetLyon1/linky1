@@ -16,6 +16,11 @@
                                     <ul class="nav nav-tabs pull-right">
                                         <li class="pull-left header">Paramètres</li>
                                     </ul>
+                                    <div class="maj">
+                                        @if(session('success'))
+                                            <h1>{{session('success')}}</h1>
+                                        @endif
+                                    </div>
                                     <div class="container">
                                         <form action="{{ route('validation') }}" method="POST" enctype="multipart/form-data">
                                             {{ csrf_field() }}
@@ -138,6 +143,20 @@
     background-color: #45a049;
     }
 
+    .maj {
+        font-size: 32px;
+        text-shadow: -1px -1px #3646cc, 1px 1px rgba(140, 187, 255, 0.46), -3px 0 4px #ffffff;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #537cac;
+        padding:16px;
+        font-weight:lighter;
+        -moz-box-shadow: 2px 2px 6px #888;
+        -webkit-box-shadow: 2px 2px 6px #888;
+        box-shadow:2px 2px 6px #888;
+        text-align:center;
+        display:block;
+        margin:16px;
+    }
 
 </style>
 
