@@ -33,6 +33,6 @@ class ValidationController extends Controller
 
             );
 
-        return 'Mise à jour du profil';
+        return redirect('/parameters');
     }
 }
