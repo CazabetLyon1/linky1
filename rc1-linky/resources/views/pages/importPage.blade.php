@@ -83,9 +83,15 @@
                 type:'get',
                 url:'/loadViaEnedis',
                 success:function(data){
-                    console.log(data.status );
+                    data = JSON.parse(data);
+                    var msg="";
+                    if(data.status === "ok"){
+                        msg='<div class="form-group col-xs-12"><div class="alert alert-success alert-dismissible col-xs-3"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h4><i class="icon fa fa-warning"></i>Récupération réussie !</h4>';
+                    }else{
+                        msg='<div class="form-group col-xs-12"><div class="alert alert-warning alert-dismissible col-xs-3"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h4><i class="icon fa fa-warning"></i>'+data.error+'</h4>';
+                    }
                     $("#returnMsg").empty();
-                    $("#returnMsg").append(data);
+                    $("#returnMsg").append(msg);
                 }
             });
         }
